@@ -18,6 +18,17 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  // For proxying PostHog calls
+  /* server: {
+    proxy: {
+      '/ingest': {
+        target:
+          process.env.VITE_PUBLIC_POSTHOG_KEY || 'https://us.i.posthog.com', // or 'https://eu.i.posthog.com' for EU
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/ingest/, ''), // Strips '/ingest' from the path
+      },
+    },
+  }, */
 })
 
 export default config
