@@ -7,9 +7,9 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY as string, {
-      // If proxying enabled create the call this way, works only on localhost
+      // If proxying enabled create the call this way
       /* 
-      api_host: '/ingest', // Points to your local proxy
+      api_host: '/api/ingest' || '/ingest', // Points to api or vite local proxy 
       ui_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || 'https://us.posthog.com',
       */
       api_host:
